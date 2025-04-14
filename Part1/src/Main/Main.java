@@ -18,8 +18,7 @@ public class Main {
                 "unknown_bug"
         )
                 ;
-
-
+        
         for (String issue : issues) {
             System.out.println("\n--- Handling issue: " + issue + " ---");
             faq.handle(issue);
