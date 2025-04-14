@@ -16,7 +16,9 @@ public class Main {
                 "refund_request",
                 "account_ban",
                 "unknown_bug"
-        );
+        )
+                ;
+
 
         for (String issue : issues) {
             System.out.println("\n--- Handling issue: " + issue + " ---");
