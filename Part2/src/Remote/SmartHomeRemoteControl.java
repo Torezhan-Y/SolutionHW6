@@ -1,5 +1,6 @@
 package Remote;
 
+import Command.Command;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -7,7 +8,7 @@ public class SmartHomeRemoteControl {
     private Map<String, Command> commandSlots = new HashMap<>();
     private Command lastExecutedCommand;
 
-    public void assignCommandToSlot(String slot, Command command) {
+    public void addCommand(String slot, Command command) {
         commandSlots.put(slot, command);
     }
 
@@ -22,6 +23,12 @@ public class SmartHomeRemoteControl {
     public void undoButton() {
         if (lastExecutedCommand != null) {
             lastExecutedCommand.undo();
+        }
+    }
+
+    public void redoButton() {
+        if (lastExecutedCommand != null) {
+            lastExecutedCommand.execute();
         }
     }
 }
