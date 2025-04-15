@@ -18,8 +18,8 @@ public class GoodnightModeCommand implements Command {
 
     @Override
     public void undo() {
-        for (Command command : commands) {
-            command.undo();
+        for (int i = commands.size() - 1; i >= 0; i--) {
+            commands.get(i).undo();
         }
     }
 }
